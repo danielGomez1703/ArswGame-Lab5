@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <html lang="en" dir="ltr">
+        <head>
+            <meta charset="utf-8">
+            <title> ARSW GAMES</title>
+        </head>
+        <body>
+        <center>
+            <h1> Picas y Famas ARSW  </h1>
+
+            <form action="/" method="post">
+                <p>digite su una cadena 4 Digitos </p>
+                <input type="text"  name="cadena"/>
+                <p><input  type="submit" name="guess" value="guess" />
+                    <input  type="submit" name="reset" value="reset" />
+            </form>
+        </center>
+        <h1> Datos del juego </h1>
+        <p th:text="'Intento =  ' + ${intento}" />
+        <p th:text="'picas y famas =  ' + ${respuesta}" />
+        <p>Recent Results</p>
+        <table
+            <thead>
+                <tr>
+                    <th> cadenas </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="item : ${listIntentos}">
+                    <td><span th:text="${item}"> preguntas  </span></td>
+                </tr>
+            </tbody>
+        </table>
+     <!--   <ul>
+            <li th:each="item : ${listIntentos}" th:text="${item}">Item description here...</li>
+        </ul>  -->
+    </body>
+</html>
