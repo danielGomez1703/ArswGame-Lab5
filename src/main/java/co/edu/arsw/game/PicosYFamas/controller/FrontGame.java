@@ -37,7 +37,11 @@ public class FrontGame {
     public static void main(String[] args) {
         SpringApplication.run(FrontGame.class, args);
     }
-    
+    /**
+     * metodo get para actualizar los datos
+     * @param model quien llama el servicio GET
+     * @return la pagina donde esta el juego Principal.html
+     */
     @GetMapping("/")
     public String openGame(Model model) {
         
@@ -47,13 +51,21 @@ public class FrontGame {
         model.addAttribute("listIntentos", game.getIntentos());
         return "Principal";
     }
-    
+    /**
+     * recibe la solicitud del cliente web de adivinar
+     * @param cadena cadena a recorrer para valdiar
+     * @return redirect a la pagina /
+     */
     @RequestMapping(value = "/", method=RequestMethod.POST, params={"guess"}) 
     public String adivinar(String cadena){
         respuesta=game.adivinar(cadena);
         intentos.add(respuesta);
         return"redirect:/";
     }
+    /**
+     * reinicia el juego
+     * @return  redirect a la pagina /
+     */
     @RequestMapping(value = "/", method=RequestMethod.POST, params={"reset"}) 
     public String resetGame(){
         game.reiniciar();

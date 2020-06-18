@@ -19,7 +19,9 @@ public class Juego {
     private String estado;
     private int intento;
     private ArrayList<String> intentos;
-    
+    /**
+     * creador del juego
+     */
     public Juego() {
        intentos=new ArrayList<>();
        respuesta="";
@@ -32,6 +34,9 @@ public class Juego {
        intento=0;
        estado ="inicio";
     }
+    /**
+     * reinicia los valores por defecto del juego
+     */
     public void reiniciar(){
        intentos=new ArrayList<>();
        respuesta="";
@@ -45,6 +50,11 @@ public class Juego {
        estado ="inicio";
         
     }
+    /**
+     * metodo principal del juego el cual dice los picos y las famas
+     * @param pregunta cadena a evaluar
+     * @return muertos y heridos o picas y famas
+     */
     public String adivinar(String pregunta){
         Integer muertos =0;
         Integer heridos=0;
