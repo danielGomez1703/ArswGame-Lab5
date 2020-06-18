@@ -30,7 +30,25 @@ $ mvn spring-boot:run
 
 [link Despliegue Heroku Del juego](https://fathomless-bastion-40105.herokuapp.com/)
 
-	
+# PRUEBAS
+
+las siguientes imagene son ejemplos de como se realizaron las pruegas a la calse principal **Juego**. en caso de:
+- reinicio
+- verificar estado
+- cadenas invalidas
+
+![Modelo](https://github.com/danielGomez1703/ArswGame-Lab5/blob/master/resources/testex1.PNG)	
+
+en la siguiente imagen verica las cadenas validas o no y si esta preguntando bien.
+
+![Modelo](https://github.com/danielGomez1703/ArswGame-Lab5/blob/master/resources/testex2.PNG)
+
+se evidencia que las pruebas corren de forma correcta.
+
+
+![Modelo](https://github.com/danielGomez1703/ArswGame-Lab5/blob/master/resources/succesTest.PNG)
+
+
 
 ## Modelo
 ![Modelo](https://github.com/danielGomez1703/ArswGame-Lab5/blob/master/resources/Modelo.PNG)

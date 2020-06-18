@@ -8,6 +8,8 @@ package co.edu.arsw.game.PicosYFamas.controller;
 import co.edu.arsw.game.PicosYFamas.Game.Juego;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -58,8 +60,12 @@ public class FrontGame {
      */
     @RequestMapping(value = "/", method=RequestMethod.POST, params={"guess"}) 
     public String adivinar(String cadena){
-        respuesta=game.adivinar(cadena);
-        intentos.add(respuesta);
+        try{
+            respuesta=game.adivinar(cadena);
+            intentos.add(respuesta);
+        }catch(Exception e){
+             Logger.getLogger(FrontGame.class.getName()).log(Level.SEVERE, null, e);
+        }
         return"redirect:/";
     }
     /**

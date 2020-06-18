@@ -61,18 +61,22 @@ public class Juego {
         if (pregunta.equals(respuesta)){
             return "Felicidade a Ganado - " + respuesta;
         }
-        for(int i=0;i<4;i++){
-            if (respuesta.contains(pregunta.charAt(i)+"")){
-                if(pregunta.charAt(i) == respuesta.charAt(i)){
-                    muertos++;
-                }else{
-                  heridos++;
+        if(pregunta.length()< 4){
+           estado = "Cadena invalida";
+        }else{
+            for(int i=0;i<4;i++){
+                if (respuesta.contains(pregunta.charAt(i)+"")){
+                    if(pregunta.charAt(i) == respuesta.charAt(i)){
+                        muertos++;
+                    }else{
+                      heridos++;
+                    }
                 }
-            }
-                    
-        }   
-        intento++;
-        intentos.add(""+pregunta+"-"+muertos+heridos);
+
+            }   
+            intento++;
+            intentos.add(""+pregunta+"-"+muertos+heridos);
+        }
        return ""+muertos+heridos;
     }
 
